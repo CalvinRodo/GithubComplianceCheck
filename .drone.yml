@@ -2,7 +2,8 @@ kind: pipeline
 name: default
 
 steps:
-- name: build docker image
-  image: docker-dind
+- name: test
+  image: golang
   commands:
-  - docker build .
+  - go get
+  - go test
