@@ -22,7 +22,7 @@ RUN go get github.com/shurcooL/githubv4 && \
 
 FROM scratch
 
-COPY --from=builder /build/src/comply/main /app/
+COPY --from=builder /build/src/comply/does-this-comply /app/
 
 WORKDIR /app
 
