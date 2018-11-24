@@ -1,9 +1,12 @@
+---
 kind: pipeline
 name: default
 
 steps:
-- name: test
+- name: build
   image: golang
   commands:
-  - go get
-  - go test
+  - go get github.com/shurcooL/githubv4
+  - go get golang.org/x/oauth2
+  - cd src/comply
+  - go build
