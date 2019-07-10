@@ -1,0 +1,24 @@
+{
+  viewer {
+    login
+    createdAt
+  }
+  organization(login: "esdc-edsc") {
+    name
+    requiresTwoFactorAuthentication
+    repositories (first: 100) {
+      nodes {
+        name
+        branchProtectionRules(first: 100) {
+          nodes {
+            requiredApprovingReviewCount,
+            requiresStrictStatusChecks,
+            requiresCommitSignatures,
+            restrictsPushes,
+            requiresApprovingReviews
+          }
+        }
+      }
+    }
+  }
+}
